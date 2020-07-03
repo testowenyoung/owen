@@ -196,6 +196,9 @@ jobs:
         with:
           ref: gh-pages
           path: .bloga-last-build
+        env:
+          GIT_TRACE: 1
+          GIT_CURL_VERBOSE: 1
       - name: Get gatsby-latest-cache-key content
         if: ${{ steps.get-gatsby-latest-cache-key-file.outcome == 'success' }}
         id: gatsby-latest-cache-key
